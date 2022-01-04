@@ -1,0 +1,17 @@
+version: "3.3"
+
+services:
+  api:
+    container_name: "ci_cd_fastapi"
+    ports:
+      - 80:80
+    build: .
+    restart: unless-stopped
+    networks:
+      - default-bridge
+    volumes:
+      - ./src/ci_cd_fastapi/:/app
+    entrypoint: ./entrypoint_dev.sh
+networks:
+  default-bridge:
+    driver: bridge
