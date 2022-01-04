@@ -1,3 +1,8 @@
 fastapi==0.70.0
 uvicorn==0.16.0
 pip-tools==6.4.0
+alembic==1.6.5
+python-dotenv==0.15.0
+SQLAlchemy==1.4.22
+PyMySQL==1.0.2
+cryptography==36.0.1  # For password authentication to mysql
