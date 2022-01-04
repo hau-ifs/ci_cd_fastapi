@@ -1,0 +1,38 @@
+# Please refer to the following documentation for further details
+# https://pylint.pycqa.org/en/latest/technical_reference/features.html
+[MASTER]
+disable=
+    C0114, # missing-module-docstring
+    R0903, # Too few public methods
+
+[BASIC]
+good-names=db, e, ke
+
+[DESIGN]
+max-args=5
+max-locals=15
+max-returns=6
+max-branches=12
+max-statements=50
+max-parents=7
+max-attributes=7
+min-public-methods=0
+
+
+[FORMAT]
+max-line-length=120
+single-line-if-stmt=no
+
+[ELIF]
+max-nested-blocks=5
+
+[LOGGING]
+logging-modules=logging
+
+[SIMILARITIES]
+min-similarity-lines=4
+ignore-comments=yes
+ignore-docstrings=yes
+
+[EXCEPTIONS]
+overgeneral-exceptions=Exception

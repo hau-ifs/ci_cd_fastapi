@@ -1,0 +1,6 @@
+-r src/ci_cd_fastapi/requirements.txt
+pylint
+black
+pytest
+pytest-mock
+pytest-cov
