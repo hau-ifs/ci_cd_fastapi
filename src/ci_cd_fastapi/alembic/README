@@ -1,0 +1,6 @@
+Generic single-database configuration.
+
+
+DB_USER=webuser DB_PASS=password DB_HOST=localhost DB_PORT=3306 DB_NAME=ci_cd_fastapi alembic revision --autogenerate
+
+DB_USER=webuser DB_PASS=password DB_HOST=localhost DB_PORT=3306 DB_NAME=ci_cd_fastapi alembic upgrade head

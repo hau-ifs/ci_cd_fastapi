@@ -9,9 +9,29 @@ services:
     restart: unless-stopped
     networks:
       - default-bridge
+    depends_on:
+      - db
+    env_file: src/ci_cd_fastapi/.env_dev
     volumes:
       - ./src/ci_cd_fastapi/:/app
     entrypoint: ./entrypoint_dev.sh
+  db:
+    container_name: "ci_cd_db"
+    image: mysql:8.0.27
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - default-bridge
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: default
+      MYSQL_DATABASE: ci_cd_fastapi
+      MYSQL_USER: webuser
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+volumes:
+  db_data: { }
 networks:
   default-bridge:
     driver: bridge
