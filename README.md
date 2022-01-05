@@ -2,3 +2,4 @@
 
 
 Add AWS access and secrets to allow automated push to ECR.
+Requires AmazonEC2ContainerRegistryFullAccess
