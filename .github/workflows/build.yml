@@ -1,4 +1,4 @@
-name: Build image
+name: CI build
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: docker_ci_cd_fastapi
-        IMAGE_TAG: fastapi_demo_image
+        IMAGE_TAG: ${GITHUB_SHA::6}
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
