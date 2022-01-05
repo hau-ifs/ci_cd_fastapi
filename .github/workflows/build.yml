@@ -26,6 +26,5 @@ jobs:
         ECR_REPOSITORY: docker_ci_cd_fastapi
         IMAGE_TAG: fastapi_demo_image
       run: |
-        env
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
