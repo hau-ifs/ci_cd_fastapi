@@ -1,0 +1,14 @@
+name: Continuous Deployment
+
+on:
+  workflow_run:
+    workflows: ["CI build"]
+    types:
+      - completed
+
+jobs:
+  deployment:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v2
